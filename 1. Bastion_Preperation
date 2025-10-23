@@ -1,6 +1,37 @@
-# create the Bastion VM with the following:
+# create the Bastion VM with the following and assign a static ip with dns and hostname:
 i) RAM: 16 GB
 ii) Disk: 300GB
 iii) CPU: 4
 
 #download the NKP airgapped bundl to the bastion / Upload from Winscp
+wget "<link>"
+
+#untar the airgapped bundle 
+tar -zxvf "<bundle_name>"
+
+#change the directory to the extracted folder
+cd nkp-v2.16
+
+#configure nkp cli and verify
+cp -a cli/nkp /usr/local/bin
+nkp version
+nkp --help
+
+#configure kubectl cli 
+cp -a kubectl /usr/local/bin
+kubectl version
+kubectl --help
+
+#configure docker or podman
+i) if the vm is redhat it will come with podman as default
+ii) if the vm is not rhel, or require docker follow the below steps
+sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl enable --now docker
+docker --version
+
+#generate ssh keys 
+ssh-keygen 
+click all as defaults 
+
+#push the nkp bundles into the registry (if registry is aldready exists) 

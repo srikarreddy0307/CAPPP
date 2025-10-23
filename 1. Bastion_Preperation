@@ -1,0 +1,6 @@
+# create the Bastion VM with the following:
+i) RAM: 16 GB
+ii) Disk: 300GB
+iii) CPU: 4
+
+#download the NKP airgapped bundl to the bastion / Upload from Winscp

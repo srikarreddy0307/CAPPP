@@ -1,0 +1,61 @@
+root@r0-nkpai-jump01 nkp-v2.16.0]#
+[root@r0-nkpai-jump01 nkp-v2.16.0]# nkp install kommander --installer-config /nkp/configs/kommander/r0-nkpai-kmdr-minimal.yaml --kubeconfig /nkp/configs/preprovisioned/r0-nkpai.conf --kommander-applications-repository ./application-repositories/kommander-applications-v2.16.0.tar.gz --airgapped -v 5
+Feature gate default state    feature=InformerResourceVersion enabled=false
+Feature gate default state    feature=InOrderInformers enabled=true
+Feature gate default state    feature=WatchListClient enabled=false
+Feature gate default state    feature=ClientsAllowCBOR enabled=false
+Feature gate default state    feature=ClientsPreferCBOR enabled=false
+ ✓ Running pre-flight checks
+fetching kommander-applications
+ ✓ Fetching applications repository
+ ✓ Deploying base resources
+ ✓ Persisting registry credentials for OCI Artifacts
+Skipping injection of proxy variables as none have been defined
+Waiting for flux deployment "helm-controller" to be ready
+Waiting for flux deployment "kustomize-controller" to be ready
+Waiting for flux deployment "notification-controller" to be ready
+Waiting for flux deployment "source-controller" to be ready
+ ✓ Deploying Flux
+ ✓ Deploying Kommander root CA
+ ✓ Deploying Git Operator
+ ✓ Deploying Ingress certificate
+running the port-forwarder in the background
+waiting for port-forward to be established
+Forwarding from 127.0.0.1:41053 -> 8443
+Forwarding from [::1]:41053 -> 8443
+the port-forward has signaled ready
+Handling connection for 41053
+Handling connection for 41053
+ ✓ Pushing application definitions to Git repository
+running the port-forwarder in the background
+waiting for port-forward to be established
+Forwarding from 127.0.0.1:45889 -> 8443
+Forwarding from [::1]:45889 -> 8443
+the port-forward has signaled ready
+Handling connection for 45889
+Handling connection for 45889
+ ✓ Bootstrapping management Git repository
+ ✓ Deploying Flux configuration
+No config override specified for App gatekeeper
+No config override specified for App kubefed
+No config override specified for App kommander
+No config override specified for App kommander-ui
+No config override specified for App reloader
+App traefik config override CM traefik-overrides created
+No config override specified for App traefik-forward-auth-mgmt
+No config override specified for App dex
+No config override specified for App dex-k8s-authenticator
+running the port-forwarder in the background
+waiting for port-forward to be established
+Forwarding from 127.0.0.1:41439 -> 8443
+Forwarding from [::1]:41439 -> 8443
+the port-forward has signaled ready
+Handling connection for 41439
+Handling connection for 41439
+ ✓ Deploying Kommander Operator
+applying kube-prometheus-stack-mgmt-overrides configmap
+kube-prometheus-stack-mgmt-overrides configmap successfully applied
+ ✓ Creating Management Config Overrides ConfigMaps for relevant applications
+ ✗ Deploying AppDeployments for enabled applications
+failed to ensure "Deploying AppDeployments for enabled applications": fa                                                                          iled to wait for HelmRelease kommander-appmanagement in the kommander na                                                                          mespace to be ready: helmreleases.helm.toolkit.fluxcd.io "kommander-appm                                                                          anagement" not found
+[root@r0-nkpai-jump01 nkp-v2.16.0]# 

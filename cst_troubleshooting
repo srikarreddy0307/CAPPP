@@ -57,5 +57,5 @@ applying kube-prometheus-stack-mgmt-overrides configmap
 kube-prometheus-stack-mgmt-overrides configmap successfully applied
  ✓ Creating Management Config Overrides ConfigMaps for relevant applications
  ✗ Deploying AppDeployments for enabled applications
-failed to ensure "Deploying AppDeployments for enabled applications": fa                                                                          iled to wait for HelmRelease kommander-appmanagement in the kommander na                                                                          mespace to be ready: helmreleases.helm.toolkit.fluxcd.io "kommander-appm                                                                          anagement" not found
+failed to ensure "Deploying AppDeployments for enabled applications": failed to wait for HelmRelease kommander-appmanagement in the kommander namespace to be ready: helmreleases.helm.toolkit.fluxcd.io "kommander-appmanagement" not found
 [root@r0-nkpai-jump01 nkp-v2.16.0]# 
